@@ -18,3 +18,35 @@ header .switch-theme {
   align-items: center;
   flex-wrap: wrap;
 }
+
+.pagination-btns {
+  width: 80%;
+  margin: auto;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.pagination-btns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid #2b22ff;
+  color: #2b22ff;
+  cursor: pointer;
+  transition: 0.3s linear;
+  font-weight: bolder;
+}
+
+.pagination-btns a:hover {
+  color: white;
+  background-color: #2b22ff;
+}
+
+.pagination-active a {
+  color: white;
+  background-color: #2b22ff;
+}
