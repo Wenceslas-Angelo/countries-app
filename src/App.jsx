@@ -3,10 +3,12 @@ import './App.css';
 import { FaMoon } from 'react-icons/fa';
 import Todo from './components/Country';
 import ReactPaginate from 'react-paginate';
+import Search from './components/Search';
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
+  const [query, setQuery] = useState('');
 
   const countryPerPage = 8;
   const pageVisited = pageNumber * countryPerPage;
@@ -21,6 +23,17 @@ function App() {
     getAllCountries();
   }, []);
 
+  const filterCountries = () => {
+    if (query) {
+      const search = countries.filter((country) =>
+        country.name.common.toLowerCase().includes(query.toLowerCase())
+      );
+      return search;
+    } else {
+      return countries;
+    }
+  };
+
   return (
     <div className="app">
       <header>
@@ -30,8 +43,12 @@ function App() {
         </div>
       </header>
 
+      <div className="actions">
+        <Search query={query} setQuery={setQuery} />
+      </div>
+
       <div className="countries">
-        {countries
+        {filterCountries()
           .slice(pageVisited, pageVisited + countryPerPage)
           .map((country) => (
             <Todo
@@ -47,7 +64,7 @@ function App() {
       <ReactPaginate
         previousLabel={'Previous'}
         nextLabel={'Next'}
-        pageCount={Math.ceil(countries.length / countryPerPage)}
+        pageCount={Math.ceil(filterCountries().length / countryPerPage)}
         onPageChange={({ selected }) => setPageNumber(selected)}
         containerClassName={'pagination-btns'}
         previousLinkClassName={'previous-btn'}

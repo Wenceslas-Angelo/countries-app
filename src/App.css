@@ -12,6 +12,15 @@ header .switch-theme {
   cursor: pointer;
 }
 
+.actions {
+  margin: 20px auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .countries {
   display: flex;
   justify-content: center;
