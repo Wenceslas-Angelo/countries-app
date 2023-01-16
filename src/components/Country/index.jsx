@@ -16,9 +16,11 @@ function Country({ image, name, population, capital, region }) {
         <p>
           Region: <span>{region}</span>
         </p>
-        <p>
-          Capital: <span>{capital}</span>
-        </p>
+        {capital && (
+          <p>
+            Capital: <span>{capital}</span>
+          </p>
+        )}
       </div>
     </div>
   );

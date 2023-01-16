@@ -4,14 +4,31 @@ import { FaMoon } from 'react-icons/fa';
 import Todo from './components/Country';
 import ReactPaginate from 'react-paginate';
 import Search from './components/Search';
+import RegionFilter from './components/RegionFilter';
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
   const [query, setQuery] = useState('');
+  const [regionValue, setRegionValue] = useState('');
+  const [regions, setRegions] = useState([]);
 
   const countryPerPage = 8;
   const pageVisited = pageNumber * countryPerPage;
+
+  const getAllRegions = () => {
+    countries.forEach((country) => {
+      let regionExist = false;
+      for (let region of regions) {
+        if (country.region === region) {
+          regionExist = true;
+        }
+      }
+      if (!regionExist) {
+        setRegions([...regions, country.region]);
+      }
+    });
+  };
 
   const getAllCountries = async () => {
     const response = await fetch(`https://restcountries.com/v3.1/all`);
@@ -23,14 +40,22 @@ function App() {
     getAllCountries();
   }, []);
 
+  getAllRegions();
+
   const filterCountries = () => {
-    if (query) {
-      const search = countries.filter((country) =>
+    // setPageNumber(0);
+    if (regionValue) {
+      const filter = countries.filter(
+        (country) =>
+          country.name.common.toLowerCase().includes(query.toLowerCase()) &&
+          country.region === regionValue
+      );
+      return filter;
+    } else {
+      const filter = countries.filter((country) =>
         country.name.common.toLowerCase().includes(query.toLowerCase())
       );
-      return search;
-    } else {
-      return countries;
+      return filter;
     }
   };
 
@@ -45,6 +70,11 @@ function App() {
 
       <div className="actions">
         <Search query={query} setQuery={setQuery} />
+        <RegionFilter
+          regions={regions}
+          regionValue={regionValue}
+          setRegionValue={setRegionValue}
+        />
       </div>
 
       <div className="countries">
