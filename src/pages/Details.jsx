@@ -25,7 +25,7 @@ function Details() {
         </NavLink>
       </div>
 
-      {country.flags && (
+      {country.flags ? (
         <div className="country-details">
           <div className="flag">
             <img src={country.flags.png} alt={`${country.name}-flag`} />
@@ -70,6 +70,13 @@ function Details() {
               ))}
             </p>
           </div>
+        </div>
+      ) : (
+        <div className="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       )}
     </div>

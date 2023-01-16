@@ -2,6 +2,7 @@ form {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   position: relative;
+  margin-top: 20px;
 }
 
 form .search-icon {
@@ -22,7 +23,8 @@ input {
   padding-left: 30px;
 }
 
-#dark input {
+#dark input,
+#dark select {
   background-color: var(--dark-blue);
   color: var(--white);
 }
