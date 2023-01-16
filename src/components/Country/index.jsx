@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
+import { NavLink } from 'react-router-dom';
 
 function Country({ image, name, population, capital, region }) {
   return (
     <div className="country">
-      <div className="image">
-        <img src={image} alt={`${name}-flag`} />
-      </div>
-      <div className="info">
-        <h2>{name}</h2>
-        <p>
-          Population: <span>{population}</span>
-        </p>
-        <p>
-          Region: <span>{region}</span>
-        </p>
-        {capital && (
+      <NavLink to={`/details/${name}`}>
+        <div className="image">
+          <img src={image} alt={`${name}-flag`} />
+        </div>
+        <div className="info">
+          <h2>{name}</h2>
           <p>
-            Capital: <span>{capital}</span>
+            Population: <span>{population}</span>
           </p>
-        )}
-      </div>
+          <p>
+            Region: <span>{region}</span>
+          </p>
+          {capital && (
+            <p>
+              Capital: <span>{capital}</span>
+            </p>
+          )}
+        </div>
+      </NavLink>
     </div>
   );
 }

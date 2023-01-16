@@ -59,3 +59,38 @@ header .switch-theme {
   color: white;
   background-color: #2b22ff;
 }
+
+.details .btn a {
+  color: #333;
+}
+
+.details .btn {
+  padding: 10px 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 50px;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.country-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.country-details .info p {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--very-Dark-blue-light);
+  padding-bottom: 5px;
+}
+
+.country-details .info p span {
+  font-weight: lighter;
+}
+
+.country-details .info-one h2 {
+  margin-bottom: 20px;
+}
