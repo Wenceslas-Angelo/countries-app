@@ -1,3 +1,17 @@
+#light {
+  background-color: var(--very-light-gray);
+  color: var(--very-Dark-blue-light);
+}
+
+#dark {
+  background-color: var(--very-dark-blue-dark);
+  color: var(--white);
+}
+
+.app {
+  min-height: 100vh;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -72,6 +86,10 @@ header .switch-theme {
   width: 100px;
 }
 
+#dark .details .btn a {
+  color: var(--white);
+}
+
 .country-details {
   display: flex;
   justify-content: space-around;
@@ -85,6 +103,10 @@ header .switch-theme {
   font-weight: bold;
   color: var(--very-Dark-blue-light);
   padding-bottom: 5px;
+}
+
+#dark .country-details .info p {
+  color: var(--white);
 }
 
 .country-details .info p span {

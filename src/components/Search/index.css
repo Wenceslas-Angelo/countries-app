@@ -21,3 +21,8 @@ input {
   padding: 10px;
   padding-left: 30px;
 }
+
+#dark input {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}

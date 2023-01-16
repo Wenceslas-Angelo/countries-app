@@ -1,5 +1,4 @@
 .country {
-  /* border: 1px solid black; */
   width: 260px;
   height: 350px;
   margin: 10px;
@@ -7,6 +6,10 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   overflow: hidden;
+}
+
+#dark .country {
+  background-color: var(--dark-blue);
 }
 
 .country .image {
@@ -25,10 +28,18 @@
   color: var(--very-Dark-blue-light);
 }
 
+#dark .country .info h2 {
+  color: var(--white);
+}
+
 .country .info p {
   font-weight: bold;
   color: var(--very-Dark-blue-light);
   padding-bottom: 5px;
+}
+
+#dark .country .info p {
+  color: var(--white);
 }
 
 .country .info p span {
