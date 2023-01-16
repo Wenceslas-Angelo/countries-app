@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,800;1,600&family=Poppins:ital,wght@1,500&family=Roboto&family=Sono:wght@400;500&display=swap');
+
 :root {
   --dark-blue: hsl(209, 23%, 22%); /*(Dark Mode Elements)*/
   --very-dark-blue-dark: hsl(207, 26%, 17%); /* (Dark Mode Background)*/
@@ -11,6 +13,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
